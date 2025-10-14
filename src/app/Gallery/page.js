@@ -24,12 +24,18 @@ const Close = () => (
   </svg>
 );
 
+const Check = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="20 6 9 17 4 12"></polyline>
+  </svg>
+);
+
 export default function GalleryPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  // Liste de vos images - ajoutez autant d'images que vous voulez
+  // Liste de vos images
   const images = [
     {
       src: "/images/gallery/photo1.jpg",
@@ -92,26 +98,101 @@ export default function GalleryPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto text-center">
+      {/* Section Présentation La Plume Blanche */}
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-red-600 font-semibold text-sm tracking-wide uppercase">
+              À propos de nous
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-3 mb-6">
+              La Plume Blanche
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              L&apos;excellence de l&apos;élevage de volailles au Maroc depuis 2009
+            </p>
+          </div>
+
+          {/* Contenu principal avec image */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-gray-900">
+                Notre Histoire
+              </h2>
+              <p className="text-gray-700 leading-relaxed">
+                La Plume Blanche est une entreprise spécialisée dans l&apos;élevage de volailles, offrant une production respectueuse des normes de qualité et de bien-être animal. Depuis notre création en 2009, nous nous engageons à fournir des produits d&apos;excellence issus d&apos;un élevage responsable.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Dès leur naissance, les poussins sont accueillis dans des fermes soigneusement aménagées pour leur garantir un climat optimal et des conditions idéales pour leur croissance. Grâce à une alimentation saine et équilibrée, associée à un suivi rigoureux, nos poussins grandissent dans un environnement contrôlé.
+              </p>
+
+              <ul className="space-y-4">
+                {[
+                  "Respect des normes de qualité et de bien-être animal",
+                  "Fermes modernes avec climat contrôlé",
+                  "Alimentation saine et équilibrée",
+                  "Traçabilité complète de nos produits",
+                  "Équipe d'experts vétérinaires et nutritionnistes"
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-white">
+                      <Check />
+                    </div>
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/0H9A0581.jpg"
+                alt="La Plume Blanche - Présentation"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Statistiques */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-gradient-to-br from-red-50 to-rose-50 rounded-3xl p-8 md:p-12">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-red-600 mb-2">15+</div>
+              <div className="text-gray-700 font-medium">Années d&apos;expérience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-red-600 mb-2">100%</div>
+              <div className="text-gray-700 font-medium">Traçabilité</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-red-600 mb-2">5000+</div>
+              <div className="text-gray-700 font-medium">Clients satisfaits</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-red-600 mb-2">24/7</div>
+              <div className="text-gray-700 font-medium">Suivi qualité</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Notre Galerie */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto text-center mb-12">
           <span className="text-red-600 font-semibold text-sm tracking-wide uppercase">
             Notre Galerie
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-3 mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 mb-6">
             Découvrez nos installations
-          </h1>
+          </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Un aperçu de nos fermes modernes et de notre engagement envers la qualité
           </p>
         </div>
-      </section>
 
-      {/* Carrousel Principal */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+        {/* Carrousel Principal */}
+        <div className="max-w-6xl mx-auto mb-16">
           <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
-            {/* Image principale */}
             <div className="relative h-[500px] md:h-[600px]">
               <Image
                 src={images[currentIndex].src}
@@ -121,16 +202,13 @@ export default function GalleryPage() {
                 priority
               />
               
-              {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
-              {/* Informations sur l'image */}
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                 <h3 className="text-3xl font-bold mb-2">{images[currentIndex].title}</h3>
                 <p className="text-lg text-white/90">{images[currentIndex].description}</p>
               </div>
 
-              {/* Boutons de navigation */}
               <button
                 onClick={prevSlide}
                 className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
@@ -146,7 +224,6 @@ export default function GalleryPage() {
                 <ChevronRight />
               </button>
 
-              {/* Indicateurs */}
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
                 {images.map((_, index) => (
                   <button
@@ -164,14 +241,12 @@ export default function GalleryPage() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Grille de miniatures */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        {/* Grille de miniatures */}
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Toutes nos photos
-          </h2>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+            Explorez toutes nos photos
+          </h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {images.map((image, index) => (
@@ -187,7 +262,6 @@ export default function GalleryPage() {
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 
-                {/* Overlay au survol */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h3 className="text-xl font-bold mb-1">{image.title}</h3>
@@ -195,7 +269,6 @@ export default function GalleryPage() {
                   </div>
                 </div>
 
-                {/* Icône zoom */}
                 <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -207,10 +280,9 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Lightbox (Vue agrandie) */}
+      {/* Lightbox */}
       {lightboxOpen && (
         <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4">
-          {/* Bouton fermer */}
           <button
             onClick={closeLightbox}
             className="absolute top-4 right-4 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all"
@@ -219,7 +291,6 @@ export default function GalleryPage() {
             <Close />
           </button>
 
-          {/* Image agrandie */}
           <div className="relative max-w-6xl w-full h-[80vh]">
             <Image
               src={images[lightboxIndex].src}
@@ -228,7 +299,6 @@ export default function GalleryPage() {
               className="object-contain"
             />
 
-            {/* Navigation lightbox */}
             <button
               onClick={prevLightboxImage}
               className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all"
@@ -244,7 +314,6 @@ export default function GalleryPage() {
               <ChevronRight />
             </button>
 
-            {/* Titre en bas */}
             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white text-center">
               <h3 className="text-2xl font-bold mb-2">{images[lightboxIndex].title}</h3>
               <p className="text-white/90">{images[lightboxIndex].description}</p>
