@@ -3,8 +3,13 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-red-700 via-rose-600 to-red-600 text-white py-12 px-6 mt-32">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
+    <footer className="relative py-16 px-6 mt-32 overflow-hidden bg-gradient-to-r from-red-700 via-rose-600 to-red-600 bg-opacity-70 backdrop-blur-md text-white">
+      {/* Dégradés/flous supplémentaires pour effet “fusion” */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-red-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-rose-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+
+      {/* Contenu */}
+      <div className="relative max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
         <div>
           <h3 className="text-2xl font-extrabold mb-4">La Plume Blanche</h3>
           <p className="text-white/80 font-medium">
@@ -38,7 +43,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-12 border-t border-white/20 pt-6 text-center text-sm text-white/70 font-semibold">
+      {/* Copyright */}
+      <div className="relative mt-12 border-t border-white/20 pt-6 text-center text-sm text-white/70 font-semibold">
         © {new Date().getFullYear()} La Plume Blanche — Tous droits réservés.
       </div>
     </footer>
