@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -59,19 +60,22 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#mission" className="text-gray-400 hover:text-white transition-colors">
-                  Notre Mission
-                </a>
+                <Link
+                href="/Gallery"
+                className="text-gray-400 hover:text-white transition-colors"
+                
+              >
+                La plume blanche
+              </Link>
               </li>
               <li>
-                <a href="#produits" className="text-gray-400 hover:text-white transition-colors">
-                  Nos Produits
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
-                  Contact
-                </a>
+                <Link
+  href="/Contact"
+  className="text-gray-400 hover:text-white transition-colors"
+>
+  Contact
+</Link>
+                
               </li>
             </ul>
           </div>
@@ -86,14 +90,14 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-500 mt-1">📧</span>
-                <a href="mailto:contact@laplumeblanche.com" className="hover:text-white transition-colors">
-                  contact@laplumeblanche.com
+                <a href="mailto:laplumeblanche60@gmail.com" className="hover:text-white transition-colors">
+                  laplumeblanche60@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-500 mt-1">📞</span>
-                <a href="tel:+212606692800" className="hover:text-white transition-colors">
-                  +212 6 06 69 28 00
+                <a href="tel: 05 37 53 02 89" className="hover:text-white transition-colors">
+                  05 37 53 02 89
                 </a>
               </li>
             </ul>
