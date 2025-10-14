@@ -71,11 +71,12 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/#contact"
-                className="px-6 py-3 bg-gradient-to-r from-red-600 to-rose-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
-              >
-                Contact
-              </Link>
+  href="/Contact"
+  className="px-6 py-3 bg-gradient-to-r from-red-600 to-rose-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+>
+  Contact
+</Link>
+
             </li>
           </ul>
 
@@ -135,12 +136,13 @@ export default function Navbar() {
               Produits
             </Link>
             <Link
-              href="/#contact"
-              className="block text-center px-6 py-3 bg-gradient-to-r from-red-600 to-rose-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
+  href="/contact"
+  className="block text-center px-6 py-3 bg-gradient-to-r from-red-600 to-rose-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+  onClick={() => setIsOpen(false)}
+>
+  Contact
+</Link>
+
           </div>
         )}
       </div>
