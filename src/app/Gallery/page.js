@@ -129,10 +129,11 @@ export default function GalleryPage() {
               <ul className="space-y-4">
                 {[
                   "Respect des normes de qualité et de bien-être animal",
+                  "Équipe d'experts vétérinaires et nutritionnistes",
                   "Fermes modernes avec climat contrôlé",
-                  "Alimentation saine et équilibrée",
                   "Traçabilité complète de nos produits",
-                  "Équipe d'experts vétérinaires et nutritionnistes"
+                  "Alimentation saine et équilibrée",
+
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-white">
@@ -144,12 +145,13 @@ export default function GalleryPage() {
               </ul>
             </div>
 
-            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/0H9A0581.jpg"
                 alt="La Plume Blanche - Présentation"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
+                priority
               />
             </div>
           </div>
