@@ -152,7 +152,7 @@ export default function HomePage() {
                 </Link>
 
                 <Link
-                  href="#contact"
+                  href="/Contact"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold border-2 border-gray-200 hover:border-red-600 hover:text-red-600 transition-all duration-300"
                 >
                   Nous contacter
@@ -321,3 +321,6 @@ export default function HomePage() {
     </div>
   );
 }
+
+
+
