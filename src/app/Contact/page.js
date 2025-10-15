@@ -90,14 +90,14 @@ export default function ContactPage() {
     {
       icon: <Phone />,
       title: "Téléphone",
-      content: "+212 6 06 69 28 00",
-      link: "tel:+212606692800"
+      content: "05 37 53 02 89",
+      link: "tel:05 37 53 02 89"
     },
     {
       icon: <Mail />,
       title: "Email",
-      content: "contact@laplumeblanche.com",
-      link: "mailto:contact@laplumeblanche.com"
+      content: "laplumeblanche60@gmail.com",
+      link: "laplumeblanche60@gmail.com"
     },
     {
       icon: <MapPin />,
