@@ -129,11 +129,10 @@ export default function GalleryPage() {
               <ul className="space-y-4">
                 {[
                   "Respect des normes de qualité et de bien-être animal",
-                  "Équipe d'experts vétérinaires et nutritionnistes",
                   "Fermes modernes avec climat contrôlé",
-                  "Traçabilité complète de nos produits",
                   "Alimentation saine et équilibrée",
-
+                  "Traçabilité complète de nos produits",
+                  "Équipe d'experts vétérinaires et nutritionnistes"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-white">
@@ -156,23 +155,67 @@ export default function GalleryPage() {
             </div>
           </div>
 
-          {/* Statistiques */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-gradient-to-br from-red-50 to-rose-50 rounded-3xl p-8 md:p-12">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-red-600 mb-2">15+</div>
-              <div className="text-gray-700 font-medium">Années d&apos;expérience</div>
+          {/* Citation thème élevage avec design organique */}
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 p-10 md:p-12 shadow-xl">
+            {/* Motif de fond subtil - plumes stylisées */}
+            <div className="absolute inset-0 opacity-5">
+              <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <pattern id="feather-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M10,2 Q12,5 10,8 Q8,5 10,2 M10,8 L10,18" stroke="currentColor" fill="none" strokeWidth="0.5" className="text-red-900"/>
+                </pattern>
+                <rect width="100" height="100" fill="url(#feather-pattern)"/>
+              </svg>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-red-600 mb-2">100%</div>
-              <div className="text-gray-700 font-medium">Traçabilité</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-red-600 mb-2">5000+</div>
-              <div className="text-gray-700 font-medium">Clients satisfaits</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-red-600 mb-2">24/7</div>
-              <div className="text-gray-700 font-medium">Suivi qualité</div>
+
+            <div className="relative">
+              {/* En-tête avec icônes d'élevage */}
+              <div className="flex justify-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center transform hover:scale-110 transition-transform">
+                  <span className="text-2xl">🐣</span>
+                </div>
+                <div className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center transform hover:scale-110 transition-transform">
+                  <span className="text-2xl">🌾</span>
+                </div>
+                <div className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center transform hover:scale-110 transition-transform">
+                  <span className="text-2xl">🐓</span>
+                </div>
+              </div>
+
+              {/* Citation principale */}
+              <div className="text-center mb-6">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 leading-tight mb-3">
+                  L&apos;excellence de l&apos;élevage
+                </h3>
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <div className="h-px w-16 bg-gradient-to-r from-transparent to-red-400"></div>
+                  <span className="text-red-600 text-xl">✦</span>
+                  <div className="h-px w-16 bg-gradient-to-l from-transparent to-red-400"></div>
+                </div>
+                <p className="text-xl md:text-2xl font-semibold text-red-600">
+                  La qualité dans vos assiettes
+                </p>
+              </div>
+
+              {/* Badges de valeurs */}
+              <div className="flex flex-wrap justify-center gap-3">
+                <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-red-100 text-sm font-semibold text-gray-700 hover:shadow-md transition-shadow">
+                  <span className="text-green-500">✓</span> Bien-être animal
+                </span>
+                <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-red-100 text-sm font-semibold text-gray-700 hover:shadow-md transition-shadow">
+                  <span className="text-green-500">✓</span> Naturel & Sain
+                </span>
+                <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-red-100 text-sm font-semibold text-gray-700 hover:shadow-md transition-shadow">
+                  <span className="text-green-500">✓</span> Traçabilité totale
+                </span>
+              </div>
+
+              {/* Signature */}
+              <div className="text-center mt-6">
+                <div className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-red-600 to-rose-600 rounded-full shadow-lg">
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  <span className="text-white font-bold text-sm tracking-wide">LA PLUME BLANCHE</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
