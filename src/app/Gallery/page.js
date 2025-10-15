@@ -38,25 +38,25 @@ export default function GalleryPage() {
   // Liste de vos images avec paragraphes détaillés
   const images = [
     {
-      src: "/images/photo1.jpg",
+      src: "/images/photo1.webp",
       title: "Nos installations modernes",
       description: "Des fermes équipées pour le bien-être animal",
       paragraph: "Des infrastructures solides et adaptées pour garantir le bien-être des animaux et l'efficacité de la production. Entre le silo de stockage des aliments et les bâtiments d'élevage, tout est pensé pour optimiser le travail des éleveurs. C'est dans ce cadre que débute le cycle de vie des volailles, un espace où tradition et modernité se rencontrent pour nourrir la population avec rigueur et passion."
     },
     {
-      src: "/images/photo2.jpg",
+      src: "/images/photo2.webp",
       title: "Élevage de qualité",
       description: "Des poussins en parfaite santé",
       paragraph: "Dans cet instant figé, on perçoit toute l'attention et le soin que l'éleveur porte à ses poussins. Observer, toucher, vérifier : chaque geste est un gage de qualité et de bien-être. L'élevage moderne ne se limite pas à la production, il repose sur une véritable relation entre l'homme et l'animal. Cette proximité est essentielle pour s'assurer du bon développement des volailles et de leur santé, garantissant ainsi une alimentation responsable et respectueuse."
     },
     {
-      src: "/images/photo3.jpg",
+      src: "/images/photo3.webp",
       title: "Alimentation naturelle",
       description: "Une nutrition équilibrée et saine",
       paragraph: "Dans ce grand espace baigné de lumière, des milliers de poussins évoluent dans un environnement conçu pour leur croissance optimale. L'aménagement de la ferme avicole répond à des critères stricts : température contrôlée, alimentation équilibrée et accès facilité à l'eau. Ce cadre reflète l'importance du bien-être animal dans les méthodes d'élevage actuelles, où la productivité va de pair avec le respect des normes sanitaires et environnementales."
     },
     {
-      src: "/images/photo4.jpg",
+      src: "/images/photo4.webp",
       title: "Environnement contrôlé 'Viper Touch'",
       description: "Température et hygiène optimales",
       paragraph: "Une unité de contrôle numérique, le \"Viper Touch\", qui permet de surveiller et d'ajuster en temps réel les différents paramètres environnementaux d'un élevage. On peut y voir les mesures de température, de ventilation, de taux de CO2 ainsi que d'autres indicateurs clés pour assurer le confort et la santé des poulets. Cette interface connectée illustre comment les nouvelles technologies permettent aux éleveurs de mieux maîtriser les conditions de vie de leurs animaux, conciliant ainsi productivité et bien-être animal, deux objectifs essentiels dans les pratiques d'élevage modernes."
