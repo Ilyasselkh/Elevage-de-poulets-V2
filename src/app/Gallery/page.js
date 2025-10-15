@@ -35,37 +35,31 @@ export default function GalleryPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  // Liste de vos images
+  // Liste de vos images avec paragraphes détaillés
   const images = [
     {
-      src: "/images/gallery/photo1.jpg",
+      src: "/images/photo1.jpg",
       title: "Nos installations modernes",
-      description: "Des fermes équipées pour le bien-être animal"
+      description: "Des fermes équipées pour le bien-être animal",
+      paragraph: "Des infrastructures solides et adaptées pour garantir le bien-être des animaux et l'efficacité de la production. Entre le silo de stockage des aliments et les bâtiments d'élevage, tout est pensé pour optimiser le travail des éleveurs. C'est dans ce cadre que débute le cycle de vie des volailles, un espace où tradition et modernité se rencontrent pour nourrir la population avec rigueur et passion."
     },
     {
-      src: "/images/gallery/photo2.jpg",
+      src: "/images/photo2.jpg",
       title: "Élevage de qualité",
-      description: "Des poussins en parfaite santé"
+      description: "Des poussins en parfaite santé",
+      paragraph: "Dans cet instant figé, on perçoit toute l'attention et le soin que l'éleveur porte à ses poussins. Observer, toucher, vérifier : chaque geste est un gage de qualité et de bien-être. L'élevage moderne ne se limite pas à la production, il repose sur une véritable relation entre l'homme et l'animal. Cette proximité est essentielle pour s'assurer du bon développement des volailles et de leur santé, garantissant ainsi une alimentation responsable et respectueuse."
     },
     {
-      src: "/images/gallery/photo3.jpg",
+      src: "/images/photo3.jpg",
       title: "Alimentation naturelle",
-      description: "Une nutrition équilibrée et saine"
+      description: "Une nutrition équilibrée et saine",
+      paragraph: "Dans ce grand espace baigné de lumière, des milliers de poussins évoluent dans un environnement conçu pour leur croissance optimale. L'aménagement de la ferme avicole répond à des critères stricts : température contrôlée, alimentation équilibrée et accès facilité à l'eau. Ce cadre reflète l'importance du bien-être animal dans les méthodes d'élevage actuelles, où la productivité va de pair avec le respect des normes sanitaires et environnementales."
     },
     {
-      src: "/images/gallery/photo4.jpg",
-      title: "Environnement contrôlé",
-      description: "Température et hygiène optimales"
-    },
-    {
-      src: "/images/gallery/photo5.jpg",
-      title: "Équipe professionnelle",
-      description: "Des experts dévoués à l'excellence"
-    },
-    {
-      src: "/images/gallery/photo6.jpg",
-      title: "Production locale",
-      description: "Fraîcheur et qualité garanties"
+      src: "/images/photo4.jpg",
+      title: "Environnement contrôlé 'Viper Touch'",
+      description: "Température et hygiène optimales",
+      paragraph: "Une unité de contrôle numérique, le \"Viper Touch\", qui permet de surveiller et d'ajuster en temps réel les différents paramètres environnementaux d'un élevage. On peut y voir les mesures de température, de ventilation, de taux de CO2 ainsi que d'autres indicateurs clés pour assurer le confort et la santé des poulets. Cette interface connectée illustre comment les nouvelles technologies permettent aux éleveurs de mieux maîtriser les conditions de vie de leurs animaux, conciliant ainsi productivité et bien-être animal, deux objectifs essentiels dans les pratiques d'élevage modernes."
     }
   ];
 
@@ -129,10 +123,11 @@ export default function GalleryPage() {
               <ul className="space-y-4">
                 {[
                   "Respect des normes de qualité et de bien-être animal",
+                  "Équipe d'experts vétérinaires et nutritionnistes",
                   "Fermes modernes avec climat contrôlé",
-                  "Alimentation saine et équilibrée",
                   "Traçabilité complète de nos produits",
-                  "Équipe d'experts vétérinaires et nutritionnistes"
+                  "Alimentation saine et équilibrée",
+                  
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-white">
@@ -293,7 +288,7 @@ export default function GalleryPage() {
             Explorez toutes nos photos
           </h3>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {images.map((image, index) => (
               <div
                 key={index}
@@ -325,46 +320,76 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Lightbox */}
+      {/* Lightbox avec texte */}
       {lightboxOpen && (
         <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4">
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all"
+            className="absolute top-4 right-4 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all z-10"
             aria-label="Fermer"
           >
             <Close />
           </button>
 
-          <div className="relative max-w-6xl w-full h-[80vh]">
-            <Image
-              src={images[lightboxIndex].src}
-              alt={images[lightboxIndex].title}
-              fill
-              className="object-contain"
-            />
+          <div className="relative max-w-7xl w-full h-[90vh] grid lg:grid-cols-2 gap-8 items-center">
+            {/* Image */}
+            <div className="relative h-[50vh] lg:h-full rounded-2xl overflow-hidden">
+              <Image
+                src={images[lightboxIndex].src}
+                alt={images[lightboxIndex].title}
+                fill
+                className="object-cover"
+              />
+            </div>
 
-            <button
-              onClick={prevLightboxImage}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all"
-              aria-label="Image précédente"
-            >
-              <ChevronLeft />
-            </button>
-            <button
-              onClick={nextLightboxImage}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all"
-              aria-label="Image suivante"
-            >
-              <ChevronRight />
-            </button>
-
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white text-center">
-              <h3 className="text-2xl font-bold mb-2">{images[lightboxIndex].title}</h3>
-              <p className="text-white/90">{images[lightboxIndex].description}</p>
-              <p className="text-sm text-white/70 mt-2">
+            {/* Texte à côté de l'image */}
+            <div className="text-white space-y-6 px-4 max-h-[80vh] overflow-y-auto">
+              {/* Numéro */}
+              <div className="text-sm font-semibold text-red-400">
                 {lightboxIndex + 1} / {images.length}
+              </div>
+
+              {/* Titre */}
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                {images[lightboxIndex].title}
+              </h3>
+
+              {/* Séparateur */}
+              <div className="flex items-center gap-3">
+                <div className="h-px w-16 bg-gradient-to-r from-red-500 to-transparent"></div>
+                <span className="text-red-500">✦</span>
+                <div className="h-px w-16 bg-gradient-to-l from-red-500 to-transparent"></div>
+              </div>
+
+              {/* Description courte */}
+              <p className="text-lg md:text-xl text-red-400 font-semibold">
+                {images[lightboxIndex].description}
               </p>
+
+              {/* Paragraphe détaillé */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                <p className="text-base md:text-lg text-gray-300 leading-relaxed text-justify">
+                  {images[lightboxIndex].paragraph}
+                </p>
+              </div>
+
+              {/* Navigation */}
+              <div className="flex gap-4 pt-4">
+                <button
+                  onClick={prevLightboxImage}
+                  className="flex-1 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center gap-2 text-white font-semibold transition-all"
+                >
+                  <ChevronLeft />
+                  Précédent
+                </button>
+                <button
+                  onClick={nextLightboxImage}
+                  className="flex-1 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center gap-2 text-white font-semibold transition-all"
+                >
+                  Suivant
+                  <ChevronRight />
+                </button>
+              </div>
             </div>
           </div>
         </div>
