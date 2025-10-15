@@ -123,7 +123,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li className="text-gray-400">Élevage de volailles</li>
-              <li className="text-gray-400">Distribution  expertise</li>
+              <li className="text-gray-400">Distribution & expertise</li>
               <li className="text-gray-400">Certification qualité</li>
             </ul>
           </div>
