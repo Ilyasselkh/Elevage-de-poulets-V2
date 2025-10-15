@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "La Plume Blanche - Élevage de Qualité",
   description:
-    "Site vitrine de La Plume Blanche, société d'élevage spécialisée dans la qualité, la traçabilité et le bien-être animal.",
+    "Site de La Plume Blanche, société d'élevage spécialisée dans la qualité, la traçabilité et le bien-être animal.",
 };
 
 export default function RootLayout({ children }) {
