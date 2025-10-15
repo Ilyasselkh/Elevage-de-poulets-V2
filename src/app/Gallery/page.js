@@ -56,7 +56,7 @@ export default function GalleryPage() {
       paragraph: "Dans ce grand espace baigné de lumière, des milliers de poussins évoluent dans un environnement conçu pour leur croissance optimale. L'aménagement de la ferme avicole répond à des critères stricts : température contrôlée, alimentation équilibrée et accès facilité à l'eau. Ce cadre reflète l'importance du bien-être animal dans les méthodes d'élevage actuelles, où la productivité va de pair avec le respect des normes sanitaires et environnementales."
     },
     {
-      src: "/images/photo4.webp",
+      src: "/images/picture4.webp",
       title: "Environnement contrôlé 'Viper Touch'",
       description: "Température et hygiène optimales",
       paragraph: "Une unité de contrôle numérique, le \"Viper Touch\", qui permet de surveiller et d'ajuster en temps réel les différents paramètres environnementaux d'un élevage. On peut y voir les mesures de température, de ventilation, de taux de CO2 ainsi que d'autres indicateurs clés pour assurer le confort et la santé des poulets. Cette interface connectée illustre comment les nouvelles technologies permettent aux éleveurs de mieux maîtriser les conditions de vie de leurs animaux, conciliant ainsi productivité et bien-être animal, deux objectifs essentiels dans les pratiques d'élevage modernes."
