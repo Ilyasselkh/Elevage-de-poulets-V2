@@ -322,78 +322,97 @@ export default function GalleryPage() {
 
       {/* Lightbox avec texte */}
       {lightboxOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4">
+  <div className="fixed inset-0 z-[100] bg-black/95 flex flex-col items-center justify-center p-4 overflow-y-auto">
+    {/* Bouton de fermeture */}
+    <button
+      onClick={closeLightbox}
+      className="absolute top-4 right-4 w-10 h-10 sm:w-12 sm:h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all z-10"
+      aria-label="Fermer"
+    >
+      <Close />
+    </button>
+
+    <div className="relative w-full max-w-7xl h-full grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 items-start mt-12 sm:mt-0">
+      {/* Image principale */}
+      <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-auto lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+        <Image
+          src={images[lightboxIndex].src}
+          alt={images[lightboxIndex].title}
+          fill
+          className="object-contain object-center"  // Utilise object-contain pour afficher l'image entière sans cropping
+          priority
+        />
+        
+        {/* Boutons de navigation pour l'image (positionnés en bas pour mobile) */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
           <button
-            onClick={closeLightbox}
-            className="absolute top-4 right-4 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all z-10"
-            aria-label="Fermer"
+            onClick={prevLightboxImage}
+            className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all"
+            aria-label="Image précédente"
           >
-            <Close />
+            <ChevronLeft />
           </button>
-
-          <div className="relative max-w-7xl w-full h-[90vh] grid lg:grid-cols-2 gap-8 items-center">
-            {/* Image */}
-            <div className="relative h-[50vh] lg:h-full rounded-2xl overflow-hidden">
-              <Image
-                src={images[lightboxIndex].src}
-                alt={images[lightboxIndex].title}
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* Texte à côté de l'image */}
-            <div className="text-white space-y-6 px-4 max-h-[80vh] overflow-y-auto">
-              {/* Numéro */}
-              <div className="text-sm font-semibold text-red-400">
-                {lightboxIndex + 1} / {images.length}
-              </div>
-
-              {/* Titre */}
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                {images[lightboxIndex].title}
-              </h3>
-
-              {/* Séparateur */}
-              <div className="flex items-center gap-3">
-                <div className="h-px w-16 bg-gradient-to-r from-red-500 to-transparent"></div>
-                <span className="text-red-500">✦</span>
-                <div className="h-px w-16 bg-gradient-to-l from-red-500 to-transparent"></div>
-              </div>
-
-              {/* Description courte */}
-              <p className="text-lg md:text-xl text-red-400 font-semibold">
-                {images[lightboxIndex].description}
-              </p>
-
-              {/* Paragraphe détaillé */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                <p className="text-base md:text-lg text-gray-300 leading-relaxed text-justify">
-                  {images[lightboxIndex].paragraph}
-                </p>
-              </div>
-
-              {/* Navigation */}
-              <div className="flex gap-4 pt-4">
-                <button
-                  onClick={prevLightboxImage}
-                  className="flex-1 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center gap-2 text-white font-semibold transition-all"
-                >
-                  <ChevronLeft />
-                  Précédent
-                </button>
-                <button
-                  onClick={nextLightboxImage}
-                  className="flex-1 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center gap-2 text-white font-semibold transition-all"
-                >
-                  Suivant
-                  <ChevronRight />
-                </button>
-              </div>
-            </div>
-          </div>
+          <button
+            onClick={nextLightboxImage}
+            className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all"
+            aria-label="Image suivante"
+          >
+            <ChevronRight />
+          </button>
         </div>
-      )}
+      </div>
+
+      {/* Contenu textuel */}
+      <div className="text-white space-y-4 px-2 sm:px-4 max-h-[60vh] sm:max-h-[70vh] md:max-h-[80vh] overflow-y-auto">
+        {/* Numéro de l'image */}
+        <div className="text-sm sm:text-base font-semibold text-red-400">
+          {lightboxIndex + 1} / {images.length}
+        </div>
+
+        {/* Titre */}
+        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+          {images[lightboxIndex].title}
+        </h3>
+
+        {/* Séparateur */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-red-500 to-transparent"></div>
+          <span className="text-red-500 text-base sm:text-xl">✦</span>
+          <div className="h-px w-8 sm:w-16 bg-gradient-to-l from-red-500 to-transparent"></div>
+        </div>
+
+        {/* Description courte */}
+        <p className="text-base sm:text-lg md:text-xl text-red-400 font-semibold">
+          {images[lightboxIndex].description}
+        </p>
+
+        {/* Paragraphe détaillé */}
+        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-justify">
+            {images[lightboxIndex].paragraph}
+          </p>
+        </div>
+
+        {/* Boutons de navigation (texte) - Affichés en colonne sur mobile */}
+        <div className="flex flex-col sm:flex-row gap-4 pt-2 sm:pt-4">
+          <button
+            onClick={prevLightboxImage}
+            className="w-full sm:w-auto flex-1 px-4 py-2 sm:px-6 sm:py-3 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center gap-2 text-white font-semibold transition-all"
+          >
+            <ChevronLeft /> Précédent
+          </button>
+          <button
+            onClick={nextLightboxImage}
+            className="w-full sm:w-auto flex-1 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center gap-2 text-white font-semibold transition-all"
+          >
+            Suivant <ChevronRight />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
 
       <Footer />
     </div>
