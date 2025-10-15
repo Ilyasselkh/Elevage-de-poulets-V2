@@ -249,16 +249,17 @@ export default function GalleryPage() {
                 <p className="text-lg text-white/90">{images[currentIndex].description}</p>
               </div>
 
+              {/* Boutons modifiés pour ajouter text-black */}
               <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 text-black"  // Ajout de text-black
                 aria-label="Image précédente"
               >
                 <ChevronLeft />
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 text-black"  // Ajout de text-black
                 aria-label="Image suivante"
               >
                 <ChevronRight />
