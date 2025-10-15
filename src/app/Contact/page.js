@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import emailjs from '@emailjs/browser';
 
 const Send = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -48,30 +49,55 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Vos clés EmailJS - Remplacez ces valeurs par vos clés réelles
+  const serviceID = 'your_service_id';  // Ex: 'service_abc123'
+  const templateID = 'template_4zog8ht';  // Ex: 'template_xyz456'
+  const publicKey = 'wTrWCzMApacymvfNi';  // Ex: 'user_ABCDEF12345'
+
+  useEffect(() => {
+    emailjs.init(publicKey);  // Initialisation d'EmailJS avec la publicKey
+  }, []);  // Exécuté une seule fois au montage du composant
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulation d'envoi
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    alert("✅ Merci pour votre message ! Nous vous contacterons bientôt.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    setIsSubmitting(false);
+    try {
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      };
+
+      const result = await emailjs.send(serviceID, templateID, templateParams);
+      
+      if (result.status === 200) {
+        alert("✅ Merci pour votre message ! Nous vous contacterons bientôt.");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        alert("❌ Une erreur s'est produite. Veuillez réessayer.");
+      }
+    } catch (error) {
+      alert("❌ Erreur d'envoi. Vérifiez votre connexion internet ou vos clés EmailJS.");
+      console.error(error);  // Pour debugger
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: <Phone />,
       title: "Téléphone",
-      content: "05 37 53 02 89",
-      link: "tel:05 37 53 02 89"
+      content: "+212 6 06 69 28 00",
+      link: "tel:+212606692800"
     },
     {
       icon: <Mail />,
       title: "Email",
-      content: "laplumeblanche60@gmail.com",
-      link: "mailto:laplumeblanche60@gmail.com"
+      content: "contact@laplumeblanche.com",
+      link: "mailto:contact@laplumeblanche.com"
     },
     {
       icon: <MapPin />,
@@ -82,7 +108,7 @@ export default function ContactPage() {
     {
       icon: <Clock />,
       title: "Horaires",
-      content: "Lun - Ven: 9h - 16h",
+      content: "Lun - Sam: 8h - 18h",
       link: null
     }
   ];
