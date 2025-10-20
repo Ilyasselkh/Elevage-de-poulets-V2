@@ -108,7 +108,7 @@ export default function ContactPage() {
     {
       icon: <Clock />,
       title: "Horaires",
-      content: "Lun - Sam: 8h - 18h",
+      content: "Lun - Ven: 9h - 16h",
       link: null
     }
   ];
