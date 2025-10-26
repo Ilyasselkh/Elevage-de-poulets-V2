@@ -272,7 +272,7 @@ export default function HomePage() {
       Notre Équipe
     </span>
     <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 mb-6">
-      Des experts passionnés à votre service
+      Gestionnaires administratifs chevronnés
     </h2>
     <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-16">
       Une équipe dédiée et expérimentée, qui veille à ce que chaque produit
