@@ -64,11 +64,12 @@ export default function ContactPage() {
     
     try {
       const templateParams = {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        message: formData.message,
-      };
+  from_name: formData.name,
+  from_email: formData.email,
+  phone: formData.phone,
+  message: formData.message,
+};
+
 
       const result = await emailjs.send(serviceID, templateID, templateParams);
       
