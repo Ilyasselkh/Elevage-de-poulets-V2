@@ -39,7 +39,7 @@ export default function Footer() {
             </h3>
             
             <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
-              Spécialiste de l&apos;élevage de volailles au Maroc depuis 2009. Excellence, qualité et respect du bien-être animal au cœur de nos engagements.
+              Spécialiste de l&apos;élevage de volailles au Maroc depuis 2007. Excellence, qualité et respect du bien-être animal au cœur de nos engagements.
             </p>
           </div>
 
@@ -143,20 +143,6 @@ export default function Footer() {
             © {currentYear} <span className="text-white font-semibold">La Plume Blanche</span>. Tous droits réservés.
           </p>
           
-          <div className="flex flex-wrap gap-6 text-sm justify-center">
-            <Link href="#" className="text-gray-400 hover:text-white transition-colors relative group">
-              Politique de confidentialité
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-red-500 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <Link href="#" className="text-gray-400 hover:text-white transition-colors relative group">
-              Mentions légales
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-red-500 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <Link href="#" className="text-gray-400 hover:text-white transition-colors relative group">
-              CGV
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-red-500 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

@@ -42,9 +42,9 @@ const Check = () => (
 
 // --- Données des statistiques ---
 const stats = [
-  { number: "15+", label: "Années d'expérience" },
+  { number: "20+", label: "Années d'expérience" },
   { number: "100%", label: "Traçabilité" },
-  { number: "5000+", label: "Clients satisfaits" },
+  { number: "1000+", label: "Clients satisfaits" },
 ];
 
 // --- Composant Stat individuel ---
@@ -85,7 +85,7 @@ export default function HomePage() {
     {
       icon: "🏡",
       title: "Fermes Modernes",
-      desc: "Infrastructures soigneusement aménagées avec climat contrôlé",
+      desc: "Infrastructures soigneusement aménagées avec une informatisation de la conduite d'élevage",
     },
     {
       icon: "🌱",
@@ -126,20 +126,18 @@ export default function HomePage() {
             {/* Texte principal */}
             <div className="space-y-8">
               <span className="px-4 py-2 bg-red-50 text-red-600 rounded-full text-sm font-semibold tracking-wide inline-block">
-                EXCELLENCE DEPUIS 2009
+                EXCELLENCE DEPUIS 2007
               </span>
 
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
-                L&apos;élevage de
+                L&apos;élevage au
                 <span className="block mt-2 bg-gradient-to-r from-red-600 to-rose-500 bg-clip-text text-transparent">
-                  qualité supérieure
+                  normes supérieures
                 </span>
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-                La Plume Blanche vous offre des produits d&apos;excellence issus
-                d&apos;un élevage respectueux du bien-être animal et de
-                l&apos;environnement.
+                Depuis 2007, la Plume Blanche s&apos;engage à produire de la volaille de bonne qualité, dans des fermes modernes qui respectent la réglementation en vigueur.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
@@ -172,7 +170,7 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-br from-red-100 to-rose-50 rounded-3xl transform rotate-3"></div>
               <div className="relative h-full bg-white rounded-3xl shadow-2xl overflow-hidden transform -rotate-3 hover:rotate-0 transition-transform duration-500">
                 <Image
-                  src="/images/0H9A0564.jpg"
+                  src="/images/0H9A0556.jpg"
                   alt="La Plume Blanche"
                   fill
                   className="object-cover"
@@ -232,7 +230,7 @@ export default function HomePage() {
                 <p className="text-gray-700 leading-relaxed">
                   Grâce à une alimentation saine et équilibrée, associée à un
                   suivi rigoureux, nos poussins grandissent dans un environnement
-                  contrôlé.
+                  idéal.
                 </p>
 
                 <ul className="space-y-4">
@@ -253,7 +251,7 @@ export default function HomePage() {
 
               <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/mission.jpg"
+                  src="/images/0H9A0567.jpg"
                   alt="Processus d'élevage"
                   fill
                   className="object-cover"

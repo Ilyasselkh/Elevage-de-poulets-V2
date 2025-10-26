@@ -50,7 +50,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Vos clés EmailJS - Remplacez ces valeurs par vos clés réelles
-  const serviceID = 'your_service_id';  // Ex: 'service_abc123'
+  const serviceID = 'service_a886ni6';  // Ex: 'service_abc123'
   const templateID = 'template_4zog8ht';  // Ex: 'template_xyz456'
   const publicKey = 'wTrWCzMApacymvfNi';  // Ex: 'user_ABCDEF12345'
 
@@ -105,12 +105,6 @@ export default function ContactPage() {
       content: "Rabat, Maroc",
       link: null
     },
-    {
-      icon: <Clock />,
-      title: "Horaires",
-      content: "Lun - Ven: 9h - 16h",
-      link: null
-    }
   ];
 
   return (
@@ -187,7 +181,7 @@ export default function ContactPage() {
                     <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <span className="text-lg">🏆</span>
                     </div>
-                    <span className="text-white/90">15+ ans d&apos;expérience</span>
+                    <span className="text-white/90">20+ ans d&apos;expérience</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">

@@ -103,7 +103,7 @@ export default function GalleryPage() {
               La Plume Blanche
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              L&apos;excellence de l&apos;élevage de volailles au Maroc depuis 2009
+              L&apos;excellence de l&apos;élevage de volailles au Maroc depuis 2007
             </p>
           </div>
 
@@ -114,7 +114,7 @@ export default function GalleryPage() {
                 Notre Histoire
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                La Plume Blanche est une entreprise spécialisée dans l&apos;élevage de volailles, offrant une production respectueuse des normes de qualité et de bien-être animal. Depuis notre création en 2009, nous nous engageons à fournir des produits d&apos;excellence issus d&apos;un élevage responsable.
+                La Plume Blanche est une entreprise spécialisée dans l&apos;élevage de volailles, offrant une production respectueuse des normes de qualité et de bien-être animal. Depuis notre création en 2007, nous nous engageons à fournir des produits d&apos;excellence issus d&apos;un élevage responsable.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 Dès leur naissance, les poussins sont accueillis dans des fermes soigneusement aménagées pour leur garantir un climat optimal et des conditions idéales pour leur croissance. Grâce à une alimentation saine et équilibrée, associée à un suivi rigoureux, nos poussins grandissent dans un environnement contrôlé.
@@ -141,7 +141,7 @@ export default function GalleryPage() {
 
             <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/0H9A0581.jpg"
+                src="/images/0H9A0564.jpg"
                 alt="La Plume Blanche - Présentation"
                 fill
                 className="object-cover object-center"
